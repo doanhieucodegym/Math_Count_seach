@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm số lần xuất hiện của phần tử</title>
+</head>
+<body>
+<button onclick="showCount();">Click!me</button>
+<p id ="result"></p>
+<script>
+
+    //tao  mang  bất  kỳ
+    function arr_Random() {
+        let arr = [];
+        for (let i = 0; i < 100; i++) {
+            arr[i] = Math.floor(Math.random() * 101);
+
+        }
+        return arr;
+    };
+    
+    function showArr(arr) {
+        document.getElementById('result').innerHTML = '';
+        for (let i=0; i <arr.length;i++){
+            document.getElementById('result').innerHTML += arr[i] +' ';
+            if(i%10 ===6){
+                 document.getElementById('result').innerHTML += arr[i] +'<br>';
+            }
+        }
+
+    };
+    function count(arr, number) {
+        let count = 0;
+        let index = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === number) {
+                count++;
+            }
+        }
+        return count;
+    };
+    function showCount() {
+        let number =Number(prompt("nhập số cần tìm"));
+     let arr =arr_Random();
+        showArr(arr);
+         let count333 = count(arr,number);
+        document.getElementById('result').innerHTML +='<br>';
+       document.getElementById('result').innerHTML +='số '+number;
+        document.getElementById('result').innerHTML +='<br>'+'số lần xuất  hiện '+number;
+
+    }
+
+
+</script>
+</body>
+</html>
